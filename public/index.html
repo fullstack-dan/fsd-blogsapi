@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs API</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the blogs API</h1>
+        <a href="/login" id="login-btn">Log in</a>
+        <a href="/register" id="register-btn">Register</a>
+    </header>
+    <main>
+        <h1>Latest blogs</h1>
+        <section id="blogs-cont">
+        </section>
+        <section id="publisher-controls">
+            <button id="create-blog-btn">
+                Create a blog post
+            </button>
+            <form id="create-blog-form" style="display: none;">
+                <h3>Create a new blog</h3>
+                <p id="create-blog-info"></p>
+                <label for="create-blog-title"></label>
+                <input type="text" id="create-blog-title" placeholder="Blog title" required>
+                <label for="create-blog-description"></label>
+                <input type="text" id="create-blog-description" placeholder="Blog description" required>
+                <label for="create-blog-content"></label>
+                <textarea id="create-blog-content" placeholder="Blog content" required></textarea>
+                <button type="submit" id="submit-create-blog-btn">Create blog</button>
+                <button type="button" id="cancel-create-blog-btn">Cancel</button>
+            </form>
+        </section>
+    </main>
+</body>
+<script src="./index.js" defer></script>
+</html>
