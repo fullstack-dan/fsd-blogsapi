@@ -7,8 +7,7 @@ const pathSegments = url.pathname.split('/');
 const blogId = pathSegments[pathSegments.length - 1];
 fetch(`/api/v1/blogs/${blogId}`)
     .then(response => response.json())
-    .then(data => {
-        const blog = data.blog;
+    .then(blog => {
         blogPostContainer.innerHTML = `
         <h1>${blog.title}</h1>
         <h3>${blog.description}</h3>
@@ -45,8 +44,8 @@ fetch(`/api/v1/blogs/${blogId}`)
                     }
                     return response.json();
                 })
-                .then(data => {
-                    likeButton.innerHTML = `Liked by ${data.blog.likes.length} user${data.blog.likes.length === 1 ? '' : 's'}`;
+                .then(blog => {
+                    likeButton.innerHTML = `Liked by ${blog.likes.length} user${blog.likes.length === 1 ? '' : 's'}`;
                     likeButton.disabled = true;
                 })
                 .catch(error => {

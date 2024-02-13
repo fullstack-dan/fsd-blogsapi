@@ -4,7 +4,7 @@ const { BadRequestError, NotFoundError } = require("../errors");
 
 const getAllBlogs = async (req, res) => {
     const blogs = await Blog.find({}).sort("createdAt");
-    res.status(StatusCodes.OK).json({ blogs });
+    res.status(StatusCodes.OK).json({ blogs, count: blogs.length });
 };
 
 const getBlog = async (req, res) => {
@@ -17,7 +17,7 @@ const getBlog = async (req, res) => {
     if (!blog) {
         throw new NotFoundError(`No blog with id ${blogId}`);
     }
-    res.status(StatusCodes.OK).json({ blog });
+    res.status(StatusCodes.OK).json(blog);
 };
 
 const createBlog = async (req, res) => {
@@ -29,7 +29,7 @@ const createBlog = async (req, res) => {
         author: req.user.name,
         createdBy: req.user.userId,
     });
-    res.status(StatusCodes.CREATED).json({ blog });
+    res.status(StatusCodes.CREATED).json(blog);
 };
 
 const updateBlog = async (req, res) => {
@@ -49,7 +49,7 @@ const updateBlog = async (req, res) => {
     if (!blog) {
         throw new NotFoundError(`No blog with id ${blogId}`);
     }
-    res.status(StatusCodes.OK).json({ blog });
+    res.status(StatusCodes.OK).json(blog);
 };
 
 const deleteBlog = async (req, res) => {
@@ -83,7 +83,7 @@ const likeBlog = async (req, res) => {
         throw new NotFoundError(`No blog with id ${blogId}`);
     }
 
-    res.status(StatusCodes.OK).json({ blog });
+    res.status(StatusCodes.OK).json(blog);
 };
 
 const getUserBlogs = async (req, res) => {
@@ -91,7 +91,7 @@ const getUserBlogs = async (req, res) => {
         user: { userId },
     } = req;
     const blogs = await Blog.find({ createdBy: userId });
-    res.status(StatusCodes.OK).json({ blogs });
+    res.status(StatusCodes.OK).json({ blogs, count: blogs.length });
 };
 
 module.exports = {

@@ -2,8 +2,8 @@
 const getBlogs = async () => {
     const blogsList = document.getElementById('blogs-cont');
     const response = await fetch('/api/v1/blogs');
-    const blogs = await response.json();
-    const blogsArray = blogs.blogs;
+    const data = await response.json();
+    const blogsArray = data.blogs;
     blogsList.innerHTML = '';
 
     blogsArray.forEach(blog => {
