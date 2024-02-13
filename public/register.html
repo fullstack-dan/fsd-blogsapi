@@ -5,35 +5,39 @@
     <title>Blogs API</title>
 </head>
 <body>
-<h1>Register</h1>
-<form>
-    <p id="form-info"></p>
-    <div>
-        <label for="name">name:</label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="email">email:</label>
-        <input type="email" id="email" />
-    </div>
-    <div>
-        <label for="password">password:</label>
-        <input type="password" id="password" />
-    </div>
-    <div>
-        <label for="password-confirmation">confirm password:</label>
-        <input type="password" id="password-confirmation" />
-    </div>
-    <button type="button" id="add-account-key">
-        Add an account creation key
-    </button>
-    <div id="account-key-cont" style="display: none;">
-        <label for="account-key">account key</label>
-        <input type="text" id="account-key" />
-    </div>
-    <button type="button" id="register-button">register</button>
-    <button type="button" id="register-cancel">cancel</button>
-</form>
+<div class="form-cont">
+    <h1>Register</h1>
+    <form>
+        <p id="form-info"></p>
+        <div>
+            <label for="name">name:</label>
+            <input type="text" id="name"/>
+        </div>
+        <div>
+            <label for="email">email:</label>
+            <input type="email" id="email"/>
+        </div>
+        <div>
+            <label for="password">password:</label>
+            <input type="password" id="password"/>
+        </div>
+        <div>
+            <label for="password-confirmation">confirm password:</label>
+            <input type="password" id="password-confirmation"/>
+        </div>
+        <button type="button" id="add-account-key">
+            Add an account creation key
+        </button>
+        <div id="account-key-cont" style="display: none;">
+            <label for="account-key">account key</label>
+            <input type="text" id="account-key"/>
+        </div>
+        <div id="form-btns">
+            <button type="button" id="register-button">register</button>
+            <button type="button" id="register-cancel">cancel</button>
+        </div>
+    </form>
+</div>
 </body>
 <script src="/global.js" defer></script>
 <script src="register.js" defer></script>

@@ -14,7 +14,11 @@ fetch('/api/v1/blogs', {
         const blogsDiv = document.querySelector('.blogs');
         blogs.forEach(blog => {
             const blogDiv = document.createElement('div');
-            blogDiv.innerHTML = `<h2>${blog.title}</h2><p>${blog.content}</p>`;
+            blogDiv.innerHTML = `<h2><a href="/blogs/${blog._id}">
+                                    ${blog.title}
+                                    </a></h2>
+                                 <h3>By ${blog.author}</h3>
+                                 <p>${blog.content}</p>`;
             blogsDiv.appendChild(blogDiv);
         });
     })

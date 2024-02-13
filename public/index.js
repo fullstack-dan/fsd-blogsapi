@@ -1,6 +1,3 @@
-const loginButton = document.getElementById('login-btn');
-const registerButton = document.getElementById('register-btn');
-
 
 const getBlogs = async () => {
     const blogsList = document.getElementById('blogs-cont');
@@ -11,7 +8,7 @@ const getBlogs = async () => {
 
     blogsArray.forEach(blog => {
         let div = document.createElement('div');
-        div.className = 'blog';
+        div.className = 'blog-card';
         div.innerHTML = `
             <h2><a href="/blogs/${blog._id}">${blog.title}</a></h2>
             <h3>${blog.description}</h3>
@@ -35,7 +32,7 @@ const populatePublisherControls = () => {
 
             const createBlogBtn = document.getElementById('create-blog-btn');
             createBlogBtn.addEventListener('click', () => {
-                document.getElementById('create-blog-form').style.display = 'block';
+                document.getElementById('create-blog-form').style.display = 'flex';
             });
 
             const cancelCreateBlogBtn = document.getElementById('cancel-create-blog-btn');

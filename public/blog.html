@@ -9,6 +9,23 @@
 <div id="blog-post-container">
 
 </div>
+<div class="form-cont" id="blog-edit-form" style="display: none;">
+    <h3>Edit this blog</h3>
+    <div id="edit-blog-form-inputs">
+        <label for="edit-blog-title"></label>
+        <input type="text" id="edit-blog-title" placeholder="Blog title" maxlength="50" required>
+        <label for="edit-blog-description"></label>
+        <input type="text" id="edit-blog-description" placeholder="Blog description" maxlength="100"
+               required>
+        <label for="edit-blog-content"></label>
+        <textarea id="edit-blog-content" placeholder="Blog content" required></textarea>
+    </div>
+    <p id="edit-blog-info"></p>
+    <div id="form-btns">
+        <button type="submit" id="submit-edit-blog-btn">Edit</button>
+        <button type="button" id="cancel-edit-blog-btn">Cancel</button>
+    </div>
+</div>
 </body>
 <script src="/global.js" defer></script>
 <script src="/blog.js" defer></script>

@@ -2,6 +2,10 @@ const navbar = document.createElement('nav');
 
 let user = null;
 
+const stylesheet = document.createElement('link');
+stylesheet.rel = 'stylesheet';
+stylesheet.href = '/styles.css';
+document.head.appendChild(stylesheet);
 
 
 if(localStorage.getItem('token')) {

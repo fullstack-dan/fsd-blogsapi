@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the blogs API</h1>
+        <h1>Welcome to the Blogs API</h1>
     </header>
     <main>
         <h1>Latest blogs</h1>
@@ -16,18 +16,25 @@
             <button id="create-blog-btn">
                 Create a blog post
             </button>
-            <form id="create-blog-form" style="display: none;">
-                <h3>Create a new blog</h3>
-                <p id="create-blog-info"></p>
-                <label for="create-blog-title"></label>
-                <input type="text" id="create-blog-title" placeholder="Blog title" required>
-                <label for="create-blog-description"></label>
-                <input type="text" id="create-blog-description" placeholder="Blog description" required>
-                <label for="create-blog-content"></label>
-                <textarea id="create-blog-content" placeholder="Blog content" required></textarea>
-                <button type="submit" id="submit-create-blog-btn">Create blog</button>
-                <button type="button" id="cancel-create-blog-btn">Cancel</button>
-            </form>
+            <div class="form-cont">
+                <form id="create-blog-form" style="display: none;">
+                    <h3>Create a new blog</h3>
+                    <div id="create-blog-form-inputs">
+                        <label for="create-blog-title"></label>
+                        <input type="text" id="create-blog-title" placeholder="Blog title" maxlength="50" required>
+                        <label for="create-blog-description"></label>
+                        <input type="text" id="create-blog-description" placeholder="Blog description" maxlength="100"
+                               required>
+                        <label for="create-blog-content"></label>
+                        <textarea id="create-blog-content" placeholder="Blog content" required></textarea>
+                    </div>
+                    <p id="create-blog-info"></p>
+                    <div id="form-btns">
+                        <button type="submit" id="submit-create-blog-btn">Post</button>
+                        <button type="button" id="cancel-create-blog-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 </body>
