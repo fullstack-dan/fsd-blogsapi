@@ -85,26 +85,6 @@ const populatePublisherControls = () => {
 }
 
 window.onload = () => {
-    if (localStorage.getItem('token')) {
-        loginButton.textContent = 'Log out';
-        loginButton.addEventListener('click', () => {
-            localStorage.removeItem('token');
-            window.location = '/';
-        });
-
-        registerButton.style.display = 'none';
-    } else {
-        loginButton.textContent = 'Log in';
-        loginButton.addEventListener('click', () => {
-            window.location = '/login';
-        });
-
-        registerButton.textContent = 'Register';
-        registerButton.addEventListener('click', () => {
-            window.location = '/register';
-        });
-    }
-
     getBlogs();
     populatePublisherControls();
 };
