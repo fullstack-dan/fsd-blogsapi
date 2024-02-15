@@ -9,7 +9,8 @@ fetch('/api/v1/blogs', {
         }
         return response.json();
     })
-    .then(blogs => {
+    .then(data => {
+        const blogs = data.blogs;
         const blogsDiv = document.querySelector('.blogs');
         blogs.forEach(blog => {
             const blogDiv = document.createElement('div');
