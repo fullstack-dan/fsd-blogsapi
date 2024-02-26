@@ -53,6 +53,7 @@ fetch(`/api/v1/blogs/${blogId}`)
                 });
         });
         blogPostContainer.appendChild(likeButton);
+        return blog;
     }
 }).then((blog) => {
     if (localStorage.getItem('token')) {
